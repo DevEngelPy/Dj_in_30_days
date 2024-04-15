@@ -12,7 +12,8 @@
             el cual tiene vinculado una url ya existentes y junto a el
             en la intereacion que lleva el for se pasa el id del post a esa url
             -->
-            <a href="{% url "blog:detail_post" post.id %}">
+            
+            <a href="{{post.get_absolute_url}}">
                 {{post.title}}
             </a>
         </h2>
@@ -23,4 +24,6 @@
         {{post.body|truncatewords:30|linebreaks}}
 
     {% endfor %}
+    <!--aqui se pasa el componente de pag y hay que pasar un parametro por el block -->
+    {% include "Blog/components/pagination.html" with page=posts %}
 {% endblock content %}

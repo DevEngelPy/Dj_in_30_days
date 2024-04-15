@@ -1,0 +1,14 @@
+<!--carga del template base-->
+{% extends "Blog/base.html" %}
+<!--titulo-->
+{% block title %}{{post_detail.title}}{% endblock title %}
+<!--prt content-->
+{% block content %}
+    <h1>{{post_detail.title}}</h1>
+    <p class="date">
+        publicado: {{post_detail.publish}} by {{post_detail.author}}
+    </p>
+    <main>contenido: 
+        {{post_detail.body}}
+    </main>
+{% endblock content %}
