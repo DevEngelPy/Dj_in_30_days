@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post
 from  django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from .forms.blog.EmailPost import EmailPostFrom
 # Create your views here.
 
 #obtener todos los post
@@ -41,4 +42,20 @@ def detail_post(request, year, month, day, post):
     context:dict = {
                     'post_detail':post,
                     }
+    return render(request, template_path, context)
+
+def post_share(request, post_id):
+    post = get_object_or_404(Post, id=post_id, status = Post.Status.PUBLISH)
+    if request.method == 'POST':
+        form = EmailPostFrom(request.POST)
+        if form.is_valid():
+            form.cleaned_data
+    else:
+        form = EmailPostFrom()
+    
+    template_path = 'Blog/post/share.html'
+    context = {
+                'post':post,
+                'form':form
+                }
     return render(request, template_path, context)
