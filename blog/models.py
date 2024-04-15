@@ -11,7 +11,7 @@ class Post(models.Model):#TODO modelo de un post
     
     #atributos
     title = models.CharField(verbose_name="titulo", max_length=50)
-    slug = models.SlugField(max_length=250)
+    slug = models.SlugField(max_length=250)#url 
     author = models.ForeignKey(User, verbose_name="usuario",
                                 on_delete=models.CASCADE,
                                 related_name='blog_posts')

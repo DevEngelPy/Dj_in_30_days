@@ -1,0 +1,26 @@
+<!--carga del template base-->
+{% extends "Blog/base.html" %}
+<!--titulo-->
+{% block title %}My Blog{% endblock title %}
+<!--prt content-->
+{% block content %}
+    <h1>My blog</h1>
+    {% for post in posts %}
+        
+        <h2>
+            <!--aqui se crea un enlace con el nombre del post
+            el cual tiene vinculado una url ya existentes y junto a el
+            en la intereacion que lleva el for se pasa el id del post a esa url
+            -->
+            <a href="{% url "blog:detail_post" post.id %}">
+                {{post.title}}
+            </a>
+        </h2>
+        <p class="date">
+            publicado: {{post.publish}} by {{post.author}}
+        </p>
+
+        {{post.body|truncatewords:30|linebreaks}}
+
+    {% endfor %}
+{% endblock content %}
