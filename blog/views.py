@@ -1,6 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post
-from  django.core.paginator import Paginator
+from  django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 
 #obtener todos los post
@@ -10,8 +10,14 @@ def list_post(req):
     #TODO: creando el paginado
     paginator = Paginator(post_all,3)#se pagina de 3 en 3
     page_number = req.GET.get('page',1)#inicia en la pagina 1
-    page_post = paginator.page(page_number)
-    
+    try:
+        page_post = paginator.page(page_number)
+    except EmptyPage:
+        #si pasa un num no valido de paginacion pasa esto
+        page_post = paginator.page(paginator.num_pages)
+    except PageNotAnInteger:
+        #si intentan pasar por url texto pasa esto
+        page_post = paginator.page(1)
     template_path:str = 'Blog/post/list_post.html'#vistas html ruta
     context:dict = {    #data que mostrara  y  tranajara con los template
                 'posts':page_post,
