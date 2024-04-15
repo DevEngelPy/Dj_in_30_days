@@ -1,0 +1,46 @@
+┌─[engel][engel-HP-Laptop-15-da0xxx][±][master ✓][~/Escritorio/ProyectoDJ]
+└─▪ git config --global alias.nombre
+┌─[engel][engel-HP-Laptop-15-da0xxx][±][master ✓][~/Escritorio/ProyectoDJ]
+└─▪ git config --global alias.nombre "DevEngel"
+┌─[engel][engel-HP-Laptop-15-da0xxx][±][master ✓][~/Escritorio/ProyectoDJ]
+└─▪ git config --global alias.email "devengel1996@gmail.com"
+┌─[engel][engel-HP-Laptop-15-da0xxx][±][master ✓][~/Escritorio/ProyectoDJ]
+└─▪ git branch -M main
+┌─[engel][engel-HP-Laptop-15-da0xxx][±][main ✓][~/Escritorio/ProyectoDJ]
+└─▪ git remote add origin https://github.com/DevEngelPy/PrijectDJ.git
+┌─[engel][engel-HP-Laptop-15-da0xxx][±][main ✓][~/Escritorio/ProyectoDJ]
+└─▪ git push -u origin main
+Username for 'https://github.com': ^C
+┌─[engel][engel-HP-Laptop-15-da0xxx][±][main ✓][~/Escritorio/ProyectoDJ]
+└─▪ ssh -T git@github.com
+Hi DevEngelPy! You've successfully authenticated, but GitHub does not provide shell access.
+┌─[engel][engel-HP-Laptop-15-da0xxx][±][main ✓][~/Escritorio/ProyectoDJ]
+└─▪ git push  origin main
+Username for 'https://github.com': DevEngelPy
+Password for 'https://DevEngelPy@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Autenticación falló para 'https://github.com/DevEngelPy/PrijectDJ.git/'
+┌─[engel][engel-HP-Laptop-15-da0xxx][±][main ✓][~/Escritorio/ProyectoDJ]
+└─▪ git remote add origin git@github.com:DevEngelPy/PrijectDJ.git
+error: remoto origin ya existe.
+┌─[engel][engel-HP-Laptop-15-da0xxx][±][main ✓][~/Escritorio/ProyectoDJ]
+└─▪ git remote set-url origin  git@github.com:DevEngelPy/PrijectDJ.git
+┌─[engel][engel-HP-Laptop-15-da0xxx][±][main ✓][~/Escritorio/ProyectoDJ]
+└─▪ git remote -v
+origin	git@github.com:DevEngelPy/PrijectDJ.git (fetch)
+origin	git@github.com:DevEngelPy/PrijectDJ.git (push)
+┌─[engel][engel-HP-Laptop-15-da0xxx][±][main ✓][~/Escritorio/ProyectoDJ]
+└─▪ git push -u origin main
+Enumerando objetos: 29, listo.
+Contando objetos: 100% (29/29), listo.
+Compresión delta usando hasta 4 hilos
+Comprimiendo objetos: 100% (23/23), listo.
+Escribiendo objetos: 100% (29/29), 8.46 KiB | 577.00 KiB/s, listo.
+Total 29 (delta 1), reusados 0 (delta 0), pack-reusados 0
+remote: Resolving deltas: 100% (1/1), done.
+To github.com:DevEngelPy/PrijectDJ.git
+ * [new branch]      main -> main
+Rama 'main' configurada para hacer seguimiento a la rama remota 'main' de 'origin'.
+┌─[engel][engel-HP-Laptop-15-da0xxx][±][main ✓][~/Escritorio/ProyectoDJ]
+└─▪ 
