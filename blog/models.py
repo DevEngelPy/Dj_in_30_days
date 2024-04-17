@@ -58,3 +58,21 @@ class Post(models.Model):#TODO modelo de un post
                                                 self.publish.day,
                                                 self.slug
                                                 ])
+class Comment(models.Model):
+
+    post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
+    name = models.CharField(("nombre"), max_length=50)
+    email = models.EmailField(("email"), max_length=254)
+    body = models.TextField(("body"))
+    created = models.DateTimeField((""), auto_now=False, auto_now_add=True)
+    update = models.DateTimeField((""), auto_now=True, auto_now_add=False)
+    activate = models.BooleanField(("activo?"), default=True)
+    class Meta:
+        verbose_name = ("Comment")
+        verbose_name_plural = ("Comments")
+
+    def __str__(self):
+        return f" coment by {self.name} on {self.post}"
+
+    def get_absolute_url(self):
+        return reverse("Comment_detail", kwargs={"pk": self.pk})

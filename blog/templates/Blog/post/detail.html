@@ -14,5 +14,19 @@
     <p>
         <a href="{% url "blog:lista_post" %}"> salir a listado</a>
     </p>
-    
+    <!--link para ir al from de correos-->
+    <p><a href="{% url "blog:shere_post" post_detail.id%}">share this post</a></p>
+    {% with comment.count as total_comment%}
+        <h2>{{total_comment}} comment {{total_comment|pluralize}}</h2>
+    {% endwith %}
+    {% for comentario in comment %}
+        <p>
+            comentario {{forloop.conunter}} by {{comment.name}}
+            {{comment.created}}
+        </p>
+        {{comment.body|linebreaks}}
+    {% empty %}
+        <p>no hay comentarios</p>
+    {% endfor %}
+    {% include "Blog/includes/comment_form.html" %}
 {% endblock content %}
