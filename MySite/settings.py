@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #TODO: reguister-apps
     'blog.apps.BlogConfig',
+    'taggit',
 ]
 
 MIDDLEWARE = [

@@ -1,7 +1,12 @@
 from django.db import models
+
 from django.utils import timezone
 from django.contrib.auth.models import User #modelo por defecto de user 
+
 from django.urls import reverse #coneste se puede asignar una url acada uno delos atributos
+
+from taggit.managers import TaggableManager
+
 # Create your models here
 
 '''
@@ -37,6 +42,7 @@ class Post(models.Model):#TODO modelo de un post
     status = models.CharField(max_length=2,
                                 choices=Status.choices,
                                 default=Status.DRAFT)
+    tags = TaggableManager()
     objects = models.Manager()
     published = PublisheManager() #modelo creado arriba
     class Meta:
